@@ -1,0 +1,22 @@
+/* Pretendard's dynamic subsets (pretendard.css) leave out U+2713 "✓", which
+   the design renders from the full Pretendard font (서명 ✓, 주문 단계).
+   These two files hold only that glyph, cut from pretendard@1.3.9 with:
+   python -m fontTools.subset node_modules/pretendard/dist/web/static/woff/Pretendard-<Weight>.woff \
+     --unicodes=U+2713 --flavor=woff --output-file=src/assets/fonts/pretendard-<Weight>-u2713.woff
+   SIL Open Font License 1.1; see src/assets/fonts/Pretendard-OFL.txt. */
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("../assets/fonts/pretendard-Regular-u2713.woff") format("woff");
+  unicode-range: U+2713;
+}
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url("../assets/fonts/pretendard-SemiBold-u2713.woff") format("woff");
+  unicode-range: U+2713;
+}

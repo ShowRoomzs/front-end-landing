@@ -1,0 +1,90 @@
+@import "tailwindcss";
+@import "./styles/pretendard.css";
+@import "./styles/pretendard-extra.css";
+@import "./styles/fredoka.css";
+
+/* Values come from the design bundle "SHOWROOMZ 랜딩 페이지.html"
+   (see scripts/extract-design.mjs). Grays follow the Open Color scale the
+   design uses; console-* are the partner-center window mock colors. */
+@theme {
+  --font-sans: Pretendard, -apple-system, system-ui, sans-serif;
+  --font-logo: "Fredoka", sans-serif;
+
+  --color-ink: #1a1b1f;
+  --color-ink-card: #25262b;
+  --color-gray-0: #f8f9fa;
+  --color-gray-1: #f1f3f5;
+  --color-gray-2: #e9ecef;
+  --color-gray-3: #dee2e6;
+  --color-gray-4: #ced4da;
+  --color-gray-5: #adb5bd;
+  --color-gray-6: #868e96;
+  --color-gray-7: #495057;
+  --color-gray-8: #343a40;
+  --color-muted: #6c757d;
+
+  --color-accent: #f2456e;
+  --color-accent-text: #cf3d61;
+  --color-accent-soft: #fff0f3;
+  --color-accent-tint: #ffe3ea;
+  --color-accent-light: #ffd1dc;
+  --color-accent-pastel: #ff9db3;
+  --color-accent-on-dark: #ff8fa8;
+  --color-accent-row: #fff8fa;
+
+  --color-info-bg: #e7f1ff;
+  --color-info: #1864ab;
+  --color-success-bg: #e6f4ea;
+  --color-success: #1e7a3a;
+  --color-dot-green: #2f9e44;
+  --color-dot-blue: #1c7ed6;
+
+  --color-console-line: #e4e5e9;
+  --color-console-bg: #f1f2f4;
+  --color-console-side: #fafafb;
+  --color-console-dot: #c7c9d1;
+  --color-console-faint: #a8acb4;
+  --color-console-text: #7b7f89;
+  --color-console-text-2: #5b5f68;
+  --color-console-text-3: #3a3d45;
+
+  --shadow-card: 0 16px 40px rgba(26, 27, 31, 0.08);
+  --shadow-window: 0 30px 70px rgba(26, 27, 31, 0.12);
+  --shadow-float: 0 16px 36px rgba(26, 27, 31, 0.12);
+  --shadow-float-dark: 0 18px 40px rgba(26, 27, 31, 0.24);
+  --shadow-toast: 0 10px 24px rgba(26, 27, 31, 0.18);
+
+  /* The design switches to its mobile layout at max-width: 720px, so
+     `pc:` is >= 721px and `max-pc:` is the mobile layout. */
+  --breakpoint-pc: 721px;
+}
+
+@layer base {
+  /* The design is plain inline-styled HTML: content-box sizing, normal
+     and normal line-height. Restore those browser defaults
+     over Tailwind's preflight so the same numbers produce the same layout;
+     components opt into `box-border` exactly where the design does. */
+  *,
+  ::before,
+  ::after {
+    box-sizing: content-box;
+  }
+  html,
+  :host {
+    line-height: normal;
+  }
+  body {
+    margin: 0;
+    background: #ffffff;
+  }
+  img,
+  svg {
+    display: inline;
+    max-width: none;
+  }
+  /* Browsers size buttons border-box by default; the design relies on it. */
+  button {
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+}

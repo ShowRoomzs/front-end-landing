@@ -1,0 +1,9 @@
+dist
+node_modules
+coverage
+.pnpm-store
+pnpm-lock.yaml
+*.min.js
+*.min.css
+
+src/styles/pretendard.css
