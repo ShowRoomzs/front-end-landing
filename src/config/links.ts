@@ -1,6 +1,7 @@
 // Every link target on the site lives here.
-// External CTAs go to the sign-up pages of the partner/studio web apps;
-// in-site links use react-router paths.
+// Main-page CTAs go to the in-site brand/influencer pages; the brand and
+// influencer pages send applicants to the login page of the partner/studio
+// web apps (연동 가이드 3-1, 2026.11). In-site links use react-router paths.
 
 export const ROUTES = {
   home: "/",
@@ -8,13 +9,12 @@ export const ROUTES = {
   influencer: "/influencer",
 } as const
 
-/** 파트너센터 회원가입 — 브랜드로 시작하기 · 브랜드 입점 신청하기 · 입점 신청 · 브랜드 신청 */
-export const BRAND_SIGNUP_URL =
-  "https://front-end-partners-one.vercel.app/register"
+/** 파트너센터 로그인 — 브랜드 페이지의 입점 신청 · 브랜드 입점 신청하기 · 모바일 하단 버튼 */
+export const PARTNER_CENTER_LOGIN_URL =
+  "https://front-end-partners-one.vercel.app/login"
 
-/** 쇼룸 스튜디오 회원가입 — 인플루언서로 시작하기 · 인플루언서 신청하기 · 신청하기 · 인플루언서 신청 */
-export const INFLUENCER_SIGNUP_URL =
-  "https://front-end-studio-one.vercel.app/signup"
+/** 쇼룸 스튜디오 로그인 — 인플루언서 페이지의 신청하기 · 인플루언서 신청하기 · 모바일 하단 버튼 */
+export const STUDIO_LOGIN_URL = "https://front-end-studio-one.vercel.app/login"
 
 /** Footer legal links. The pages do not exist yet; the design links to these anchors. */
 export const PRIVACY_URL = "#privacy"

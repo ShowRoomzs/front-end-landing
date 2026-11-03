@@ -13,7 +13,7 @@ import {
   MobileBreak,
   SectionTitle,
 } from "@/components/ui/Typography"
-import { BRAND_SIGNUP_URL, INFLUENCER_SIGNUP_URL, ROUTES } from "@/config/links"
+import { ROUTES } from "@/config/links"
 import { PLACEHOLDER as P } from "@/constants/placeholders"
 import { HOME_FLOW_STEPS } from "@/features/home/flowSteps"
 import { usePageTitle } from "@/hooks/usePageTitle"
@@ -125,16 +125,10 @@ export function HomePage() {
               쇼룸에서 팔로워와의 공동구매에만 집중합니다.
             </p>
             <div className="flex flex-wrap gap-3 pt-2 max-pc:justify-center">
-              <CtaLink
-                to={BRAND_SIGNUP_URL}
-                className={`${HERO_CTA} bg-accent`}
-              >
+              <CtaLink to={ROUTES.brand} className={`${HERO_CTA} bg-accent`}>
                 브랜드로 시작하기
               </CtaLink>
-              <CtaLink
-                to={INFLUENCER_SIGNUP_URL}
-                className={`${HERO_CTA} bg-ink`}
-              >
+              <CtaLink to={ROUTES.influencer} className={`${HERO_CTA} bg-ink`}>
                 인플루언서로 시작하기
               </CtaLink>
             </div>
@@ -271,14 +265,11 @@ export function HomePage() {
               </p>
             </div>
             <div className="flex flex-wrap gap-2.5 max-pc:flex-[1_1_100%] max-pc:flex-nowrap max-pc:justify-center max-pc:gap-2">
-              <CtaLink
-                to={BRAND_SIGNUP_URL}
-                className={`${BANNER_CTA} bg-accent`}
-              >
+              <CtaLink to={ROUTES.brand} className={`${BANNER_CTA} bg-accent`}>
                 브랜드 신청
               </CtaLink>
               <CtaLink
-                to={INFLUENCER_SIGNUP_URL}
+                to={ROUTES.influencer}
                 className={`${BANNER_CTA} bg-ink`}
               >
                 인플루언서 신청
@@ -293,10 +284,10 @@ export function HomePage() {
       <Footer />
       <MobileCtaBar
         ctas={[
-          { label: "브랜드로 시작하기", to: BRAND_SIGNUP_URL, tone: "accent" },
+          { label: "브랜드로 시작하기", to: ROUTES.brand, tone: "accent" },
           {
             label: "인플루언서로 시작하기",
-            to: INFLUENCER_SIGNUP_URL,
+            to: ROUTES.influencer,
             tone: "ink",
           },
         ]}

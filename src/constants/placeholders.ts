@@ -24,8 +24,6 @@ export const PLACEHOLDER = {
   influencerTarget: "[신청 대상 한 줄 — 예: 인스타그램 뷰티 인플루언서]",
   brandBetaPeriod: "[베타 모집 기간 입력]",
   influencerBetaLine: "[모집 기간 · 초기 혜택 등 한 줄]",
-  brandSignupUrlNote: "[파트너센터 회원가입 URL]",
-  influencerSignupUrlNote: "[쇼룸 스튜디오 회원가입 URL]",
 
   // Stepper example cards
   period: "[기간]",

@@ -14,7 +14,7 @@ import {
   MobileBreak,
   SectionTitle,
 } from "@/components/ui/Typography"
-import { INFLUENCER_SIGNUP_URL } from "@/config/links"
+import { STUDIO_LOGIN_URL } from "@/config/links"
 import { PLACEHOLDER as P } from "@/constants/placeholders"
 import { StudioConsoleExample } from "@/features/influencer/StudioConsoleExample"
 import { INFLUENCER_STEPS } from "@/features/influencer/influencerSteps"
@@ -54,7 +54,7 @@ export function InfluencerPage() {
     <>
       <Header>
         <CtaLink
-          to={INFLUENCER_SIGNUP_URL}
+          to={STUDIO_LOGIN_URL}
           className="flex min-h-11 items-center rounded-[10px] bg-accent px-[18px] text-[15px] font-bold text-white"
         >
           신청하기
@@ -79,7 +79,7 @@ export function InfluencerPage() {
             </p>
             <div className="flex flex-col gap-2.5 pt-2 max-pc:items-center max-pc:text-center">
               <CtaLink
-                to={INFLUENCER_SIGNUP_URL}
+                to={STUDIO_LOGIN_URL}
                 className="flex min-h-[58px] max-w-[320px] items-center justify-center rounded-xl bg-accent text-[18px] font-bold text-white max-pc:w-full"
               >
                 {CTA_LABEL}
@@ -156,14 +156,13 @@ export function InfluencerPage() {
             </>
           }
           lead={P.influencerBetaLine}
-          cta={{ label: CTA_LABEL, to: INFLUENCER_SIGNUP_URL }}
-          note={`버튼 링크: ${P.influencerSignupUrlNote}`}
+          cta={{ label: CTA_LABEL, to: STUDIO_LOGIN_URL }}
         />
       </main>
 
       <Footer />
       <MobileCtaBar
-        ctas={[{ label: CTA_LABEL, to: INFLUENCER_SIGNUP_URL, tone: "accent" }]}
+        ctas={[{ label: CTA_LABEL, to: STUDIO_LOGIN_URL, tone: "accent" }]}
       />
     </>
   )

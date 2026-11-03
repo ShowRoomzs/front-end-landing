@@ -7,12 +7,10 @@ export function SignupCta({
   title,
   lead,
   cta,
-  note,
 }: {
   title: ReactNode
   lead: string
   cta: { label: string; to: string }
-  note: string
 }) {
   return (
     <section id="signup" className="bg-ink text-white">
@@ -30,7 +28,6 @@ export function SignupCta({
         >
           {cta.label}
         </CtaLink>
-        <p className="text-[13px] text-gray-5">{note}</p>
       </Container>
     </section>
   )

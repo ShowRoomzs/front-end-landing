@@ -8,7 +8,7 @@ import { SignupCta } from "@/components/sections/SignupCta"
 import { Stepper } from "@/components/stepper/Stepper"
 import { CtaLink } from "@/components/ui/CtaLink"
 import { Eyebrow, HeroBadge, SectionTitle } from "@/components/ui/Typography"
-import { BRAND_SIGNUP_URL } from "@/config/links"
+import { PARTNER_CENTER_LOGIN_URL } from "@/config/links"
 import { PLACEHOLDER as P } from "@/constants/placeholders"
 import { BrandConsoleExample } from "@/features/brand/BrandConsoleExample"
 import { BrandHeroVisual } from "@/features/brand/BrandHeroVisual"
@@ -55,7 +55,7 @@ export function BrandPage() {
     <>
       <Header>
         <CtaLink
-          to={BRAND_SIGNUP_URL}
+          to={PARTNER_CENTER_LOGIN_URL}
           className="flex min-h-11 items-center rounded-[10px] bg-accent px-[18px] text-[15px] font-bold text-white"
         >
           입점 신청
@@ -80,7 +80,7 @@ export function BrandPage() {
             </p>
             <div className="flex flex-col gap-2.5 pt-2 max-pc:items-center max-pc:text-center">
               <CtaLink
-                to={BRAND_SIGNUP_URL}
+                to={PARTNER_CENTER_LOGIN_URL}
                 className="flex min-h-[58px] max-w-[320px] items-center justify-center rounded-xl bg-accent text-[18px] font-bold text-white max-pc:w-full"
               >
                 {CTA_LABEL}
@@ -128,14 +128,15 @@ export function BrandPage() {
             </>
           }
           lead={`베타 기간 거래 수수료 0% (PG 결제 수수료 별도) · ${P.brandBetaPeriod}`}
-          cta={{ label: CTA_LABEL, to: BRAND_SIGNUP_URL }}
-          note={`버튼 링크: ${P.brandSignupUrlNote}`}
+          cta={{ label: CTA_LABEL, to: PARTNER_CENTER_LOGIN_URL }}
         />
       </main>
 
       <Footer />
       <MobileCtaBar
-        ctas={[{ label: CTA_LABEL, to: BRAND_SIGNUP_URL, tone: "accent" }]}
+        ctas={[
+          { label: CTA_LABEL, to: PARTNER_CENTER_LOGIN_URL, tone: "accent" },
+        ]}
       />
     </>
   )
