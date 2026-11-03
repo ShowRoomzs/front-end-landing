@@ -244,9 +244,6 @@ export function ResultExample() {
         <span className="flex-1 text-[10.5px] text-console-faint">
           화면 예시 · 가상 데이터
         </span>
-        <span className="rounded-lg bg-accent px-3 py-[7px] text-[12px] font-bold text-white">
-          이 인플루언서와 재협업 제안
-        </span>
       </div>
     </ExampleCard>
   )

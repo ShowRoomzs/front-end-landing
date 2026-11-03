@@ -1,6 +1,7 @@
 import { Container } from "@/components/layout/Container"
 import { Footer } from "@/components/layout/Footer"
 import { Header } from "@/components/layout/Header"
+import { InquiryButton } from "@/features/inquiry/InquiryButton"
 import { MobileCtaBar } from "@/components/layout/MobileCtaBar"
 import { PhoneDuo, PhoneSingle } from "@/components/phone/PhoneMockups"
 import { BenefitList } from "@/components/sections/BenefitList"
@@ -53,12 +54,15 @@ export function InfluencerPage() {
   return (
     <>
       <Header>
-        <CtaLink
-          to={STUDIO_LOGIN_URL}
-          className="flex min-h-11 items-center rounded-[10px] bg-accent px-[18px] text-[15px] font-bold text-white"
-        >
-          신청하기
-        </CtaLink>
+        <div className="flex items-center gap-2 max-pc:gap-1.5">
+          <InquiryButton page="influencer" />
+          <CtaLink
+            to={STUDIO_LOGIN_URL}
+            className="flex min-h-11 items-center rounded-[10px] bg-accent px-[18px] text-[15px] font-bold whitespace-nowrap text-white max-pc:min-h-10 max-pc:px-3.5 max-pc:text-[14px]"
+          >
+            신청하기
+          </CtaLink>
+        </div>
       </Header>
 
       <main>

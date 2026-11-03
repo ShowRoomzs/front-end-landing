@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import { Container } from "@/components/layout/Container"
 import { Footer } from "@/components/layout/Footer"
 import { Header } from "@/components/layout/Header"
+import { InquiryButton } from "@/features/inquiry/InquiryButton"
 import { MobileCtaBar } from "@/components/layout/MobileCtaBar"
 import { PhoneDuo, PhoneSingle } from "@/components/phone/PhoneMockups"
 import { Faq } from "@/components/sections/Faq"
@@ -92,19 +93,20 @@ export function HomePage() {
   return (
     <>
       <Header>
-        <nav className="flex flex-wrap items-center gap-1">
+        <nav className="flex flex-wrap items-center gap-1 max-pc:flex-nowrap max-pc:gap-0">
           <Link
             to={ROUTES.brand}
-            className="px-3.5 py-3 text-[15px] font-medium text-gray-7 no-underline"
+            className="px-3.5 py-3 text-[15px] font-medium text-gray-7 no-underline max-pc:px-[7px] max-pc:py-2.5 max-pc:text-[14px]"
           >
             브랜드
           </Link>
           <Link
             to={ROUTES.influencer}
-            className="px-3.5 py-3 text-[15px] font-medium text-gray-7 no-underline"
+            className="px-3.5 py-3 text-[15px] font-medium text-gray-7 no-underline max-pc:px-[7px] max-pc:py-2.5 max-pc:text-[14px]"
           >
             인플루언서
           </Link>
+          <InquiryButton page="main" className="max-pc:ml-1" />
         </nav>
       </Header>
 

@@ -1,6 +1,7 @@
 import { Container } from "@/components/layout/Container"
 import { Footer } from "@/components/layout/Footer"
 import { Header } from "@/components/layout/Header"
+import { InquiryButton } from "@/features/inquiry/InquiryButton"
 import { MobileCtaBar } from "@/components/layout/MobileCtaBar"
 import { BenefitList } from "@/components/sections/BenefitList"
 import { Faq } from "@/components/sections/Faq"
@@ -54,12 +55,15 @@ export function BrandPage() {
   return (
     <>
       <Header>
-        <CtaLink
-          to={PARTNER_CENTER_LOGIN_URL}
-          className="flex min-h-11 items-center rounded-[10px] bg-accent px-[18px] text-[15px] font-bold text-white"
-        >
-          입점 신청
-        </CtaLink>
+        <div className="flex items-center gap-2 max-pc:gap-1.5">
+          <InquiryButton page="brand" />
+          <CtaLink
+            to={PARTNER_CENTER_LOGIN_URL}
+            className="flex min-h-11 items-center rounded-[10px] bg-accent px-[18px] text-[15px] font-bold whitespace-nowrap text-white max-pc:min-h-10 max-pc:px-3.5 max-pc:text-[14px]"
+          >
+            입점 신청
+          </CtaLink>
+        </div>
       </Header>
 
       <main>
