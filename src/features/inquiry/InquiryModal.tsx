@@ -39,6 +39,7 @@ export function InquiryModal({
   const [privacyOpen, setPrivacyOpen] = useState(false)
   const [sentTo, setSentTo] = useState("")
   const panelRef = useRef<HTMLDivElement>(null)
+  const pressedOnBackdrop = useRef(false)
 
   const sending = status === "sending"
   const ready = isInquiryReady(fields)
@@ -104,10 +105,16 @@ export function InquiryModal({
   return createPortal(
     <div
       className="fixed inset-0 z-[60] box-border flex items-center justify-center bg-[rgba(26,27,31,0.5)] p-6 text-ink [word-break:keep-all] max-pc:items-end max-pc:p-0"
+      // 배경을 누르고 배경에서 뗐을 때만 닫는다 — click은 누른 곳과 뗀 곳의 공통 조상에서 나므로,
+      // 입력칸에서 드래그(글자 선택 등)를 시작해 배경에서 떼도 target이 배경이 되어 닫혀 버렸다
+      onPointerDown={e => {
+        pressedOnBackdrop.current = e.target === e.currentTarget
+      }}
       onClick={e => {
-        if (e.target === e.currentTarget) {
+        if (pressedOnBackdrop.current && e.target === e.currentTarget) {
           close()
         }
+        pressedOnBackdrop.current = false
       }}
     >
       <div
