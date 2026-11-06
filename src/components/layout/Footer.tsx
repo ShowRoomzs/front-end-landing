@@ -1,5 +1,19 @@
 import { PRIVACY_URL, TERMS_URL } from "@/config/links"
+import { BUSINESS as B } from "@/constants/business"
 import { PLACEHOLDER as P } from "@/constants/placeholders"
+
+/** A value still in its "[...]" placeholder form is left out of the footer until it is decided. */
+function decided(value: string) {
+  return !value.startsWith("[")
+}
+
+/** Joins the label-value pairs that are decided with " · ". */
+function line(items: [label: string, value: string][]) {
+  return items
+    .filter(([, value]) => decided(value))
+    .map(([label, value]) => `${label} ${value}`)
+    .join(" · ")
+}
 
 export function Footer() {
   return (
@@ -10,15 +24,23 @@ export function Footer() {
             SHOWROOMZ
           </p>
           <p>
-            상호 {P.companyName} · 대표 {P.ceoName} · 사업자등록번호{" "}
-            {P.businessNumber} · 통신판매업신고 {P.mailOrderNumber}
+            {line([
+              ["상호", B.companyName],
+              ["대표", B.ceoName],
+              ["사업자등록번호", B.businessNumber],
+              ["통신판매업신고", P.mailOrderNumber],
+            ])}
           </p>
           <p>
-            주소 {P.address} · 문의 {P.contactEmail}
+            {line([
+              ["주소", B.address],
+              ["대표번호", B.phone],
+              ["문의", P.contactEmail],
+            ])}
           </p>
           <p>
-            쇼룸즈는 통신판매중개자이며, 통신판매의 당사자가 아닙니다.{" "}
-            {P.legalNotice}
+            쇼룸즈는 통신판매중개자이며, 통신판매의 당사자가 아닙니다.
+            {decided(P.legalNotice) && ` ${P.legalNotice}`}
           </p>
         </div>
         <nav aria-label="약관" className="flex flex-wrap items-start gap-5">

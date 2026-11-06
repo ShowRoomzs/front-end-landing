@@ -2,12 +2,8 @@
 // decided. Replace a value here and every page that uses it updates.
 
 export const PLACEHOLDER = {
-  // Footer — business information
-  companyName: "[상호명]",
-  ceoName: "[대표자명]",
-  businessNumber: "[000-00-00000]",
+  // Footer — business information not yet issued (the rest is in business.ts)
   mailOrderNumber: "[번호]",
-  address: "[사업장 주소]",
   contactEmail: "[이메일]",
   legalNotice: "[법률 검토 후 확정 문구]",
 
