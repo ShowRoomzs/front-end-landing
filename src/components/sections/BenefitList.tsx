@@ -1,4 +1,9 @@
-export type Benefit = { title: string; desc: string }
+export type Benefit = {
+  title: string
+  desc: string
+  /** Desktop-only opening clause — the mobile design drops it to keep the line short. */
+  pcLead?: string
+}
 
 /** Numbered benefit rows (1–2 ink badges, 3–4 accent badges, as designed). */
 export function BenefitList({ items }: { items: Benefit[] }) {
@@ -22,6 +27,9 @@ export function BenefitList({ items }: { items: Benefit[] }) {
           <div className="flex flex-col gap-1">
             <h3 className="text-[18px] font-bold">{item.title}</h3>
             <p className="text-[15px] leading-[1.65] text-gray-7">
+              {item.pcLead && (
+                <span className="max-pc:hidden">{item.pcLead} </span>
+              )}
               {item.desc}
             </p>
           </div>
