@@ -1,4 +1,5 @@
-// 문의하기 — 연동 가이드 v0.1(2026.11). Google Apps Script 웹앱이 시트에 적고 회사 메일로 알린다.
+// 문의하기 — 연동 가이드 v0.2(2026.11.05). Google Apps Script 웹앱이 시트에 적고 회사 메일로 알린다.
+// 소개서 받기(features/deck)도 같은 웹앱으로 보낸다.
 
 /** Apps Script 웹앱 배포 URL (official.showroomz@gmail.com · 시트 「SHOWROOMZ 랜딩 문의」) */
 export const INQUIRY_ENDPOINT =
@@ -9,6 +10,10 @@ export const INQUIRY_MAIL = "official.showroomz@gmail.com"
 
 /** 유입 페이지 — 모바일 레이아웃(≤720px)에서는 `-m`을 붙여 보낸다 */
 export type InquiryPage = "main" | "brand" | "influencer"
+
+/** 시트 「페이지」 열에 적을 값 — 모바일 레이아웃이면 `main-m`처럼 보낸다 */
+export const pageParam = (page: InquiryPage) =>
+  window.matchMedia("(max-width: 720px)").matches ? `${page}-m` : page
 
 export type InquiryFields = {
   brand: string
@@ -54,13 +59,12 @@ export function isInquiryReady(f: InquiryFields) {
  * 네트워크 오류만 실패로 본다(서버 검증 규칙은 위 프론트 검증과 같다).
  */
 export async function sendInquiry(page: InquiryPage, f: InquiryFields) {
-  const mobile = window.matchMedia("(max-width: 720px)").matches
   await fetch(INQUIRY_ENDPOINT, {
     method: "POST",
     mode: "no-cors",
     headers: { "Content-Type": "text/plain;charset=utf-8" },
     body: JSON.stringify({
-      page: mobile ? `${page}-m` : page,
+      page: pageParam(page),
       brand: f.brand.trim(),
       name: f.name.trim(),
       email: f.email.trim(),

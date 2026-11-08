@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/Typography"
 import { ROUTES } from "@/config/links"
 import { PLACEHOLDER as P } from "@/constants/placeholders"
+import { DeckButton } from "@/features/deck/DeckButton"
 import { HOME_FLOW_STEPS } from "@/features/home/flowSteps"
 import { usePageTitle } from "@/hooks/usePageTitle"
 
@@ -53,6 +54,7 @@ const AUDIENCES = [
     cta: "브랜드 입점 알아보기",
     to: ROUTES.brand,
     ctaClass: "bg-accent text-white",
+    audience: "brand",
   },
   {
     label: "인플루언서 · 쇼룸 스튜디오",
@@ -67,8 +69,9 @@ const AUDIENCES = [
     cta: "인플루언서 신청 알아보기",
     to: ROUTES.influencer,
     ctaClass: "bg-white text-ink",
+    audience: "influencer",
   },
-]
+] as const
 
 const FAQ = [
   {
@@ -249,6 +252,11 @@ export function HomePage() {
                   >
                     {card.cta}
                   </CtaLink>
+                  <DeckButton
+                    page="main"
+                    audience={card.audience}
+                    variant="link"
+                  />
                 </div>
               ))}
             </div>

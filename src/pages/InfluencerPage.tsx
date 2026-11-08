@@ -19,6 +19,7 @@ import { STUDIO_LOGIN_URL } from "@/config/links"
 import { PLACEHOLDER as P } from "@/constants/placeholders"
 import { StudioConsoleExample } from "@/features/influencer/StudioConsoleExample"
 import { INFLUENCER_STEPS } from "@/features/influencer/influencerSteps"
+import { DeckButton } from "@/features/deck/DeckButton"
 import { usePageTitle } from "@/hooks/usePageTitle"
 
 const CTA_LABEL = "인플루언서 신청하기"
@@ -88,6 +89,11 @@ export function InfluencerPage() {
               >
                 {CTA_LABEL}
               </CtaLink>
+              <DeckButton
+                page="influencer"
+                audience="influencer"
+                variant="outline"
+              />
               <p className="text-[14px] text-muted">{P.influencerTarget}</p>
             </div>
           </div>
@@ -161,6 +167,13 @@ export function InfluencerPage() {
           }
           lead={P.influencerBetaLine}
           cta={{ label: CTA_LABEL, to: STUDIO_LOGIN_URL }}
+          secondary={
+            <DeckButton
+              page="influencer"
+              audience="influencer"
+              variant="outline-dark"
+            />
+          }
         />
       </main>
 

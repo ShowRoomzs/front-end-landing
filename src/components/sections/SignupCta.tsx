@@ -7,10 +7,13 @@ export function SignupCta({
   title,
   lead,
   cta,
+  secondary,
 }: {
   title: ReactNode
   lead: string
   cta: { label: string; to: string }
+  /** 신청 버튼 아래 보조 버튼(소개서 받기) */
+  secondary?: ReactNode
 }) {
   return (
     <section id="signup" className="bg-ink text-white">
@@ -28,6 +31,7 @@ export function SignupCta({
         >
           {cta.label}
         </CtaLink>
+        {secondary}
       </Container>
     </section>
   )

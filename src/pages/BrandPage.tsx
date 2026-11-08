@@ -14,6 +14,7 @@ import { PLACEHOLDER as P } from "@/constants/placeholders"
 import { BrandConsoleExample } from "@/features/brand/BrandConsoleExample"
 import { BrandHeroVisual } from "@/features/brand/BrandHeroVisual"
 import { BRAND_STEPS } from "@/features/brand/brandSteps"
+import { DeckButton } from "@/features/deck/DeckButton"
 import { usePageTitle } from "@/hooks/usePageTitle"
 
 const CTA_LABEL = "브랜드 입점 신청하기"
@@ -90,6 +91,7 @@ export function BrandPage() {
               >
                 {CTA_LABEL}
               </CtaLink>
+              <DeckButton page="brand" audience="brand" variant="outline" />
               <p className="text-[14px] text-muted">
                 베타 기간 거래 수수료 0% (PG 결제 수수료 별도)
               </p>
@@ -134,6 +136,9 @@ export function BrandPage() {
           }
           lead={`베타 기간 거래 수수료 0% (PG 결제 수수료 별도) · ${P.brandBetaPeriod}`}
           cta={{ label: CTA_LABEL, to: PARTNER_CENTER_LOGIN_URL }}
+          secondary={
+            <DeckButton page="brand" audience="brand" variant="outline-dark" />
+          }
         />
       </main>
 
