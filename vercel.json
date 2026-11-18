@@ -1,3 +1,7 @@
 {
+  "redirects": [
+    { "source": "/@:handle", "destination": "https://m.showroomz.co.kr/@:handle", "permanent": false },
+    { "source": "/u/:handle", "destination": "https://m.showroomz.co.kr/u/:handle", "permanent": false }
+  ],
   "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
