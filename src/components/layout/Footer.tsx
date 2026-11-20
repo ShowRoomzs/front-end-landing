@@ -39,7 +39,7 @@ export function Footer() {
             ])}
           </p>
           <p>
-            쇼룸즈는 통신판매중개자이며, 통신판매의 당사자가 아닙니다.
+            {B.responsibilityNotice}
             {decided(P.legalNotice) && ` ${P.legalNotice}`}
           </p>
         </div>
