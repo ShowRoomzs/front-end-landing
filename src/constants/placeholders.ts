@@ -3,7 +3,8 @@
 
 export const PLACEHOLDER = {
   // Footer — business information not yet issued (the rest is in business.ts)
-  contactEmail: "[이메일]",
+  // 계정 삭제 안내 — 탈퇴 뒤 법정 보관 항목 · 기간. 개인정보처리방침이 나오면 같은 내용으로 채운다(2026-11-25 대표).
+  accountRetention: "[개인정보처리방침 확정 후 보관 항목 · 기간 입력]",
   legalNotice: "[법률 검토 후 확정 문구]",
 
   // FAQ answers

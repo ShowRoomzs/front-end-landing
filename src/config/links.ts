@@ -7,7 +7,13 @@ export const ROUTES = {
   home: "/",
   brand: "/brand",
   influencer: "/influencer",
+  /** 구글 플레이 「계정 삭제 URL」 — 로그인 없이 열리는 안내 페이지 */
+  accountDeletion: "/account-deletion",
 } as const
+
+/** 소비자 웹의 회원 탈퇴 화면(로그인 후 열림) */
+export const WEB_WITHDRAWAL_URL =
+  "https://m.showroomz.co.kr/my/settings/withdrawal"
 
 /** 파트너센터 로그인 — 브랜드 페이지의 입점 신청 · 브랜드 입점 신청하기 · 모바일 하단 버튼 */
 export const PARTNER_CENTER_LOGIN_URL = "https://seller.showroomz.co.kr/login"

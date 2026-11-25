@@ -6,6 +6,7 @@ import {
   Routes,
   useLocation,
 } from "react-router-dom"
+import { AccountDeletionPage } from "@/pages/AccountDeletionPage"
 import { BrandPage } from "@/pages/BrandPage"
 import { HomePage } from "@/pages/HomePage"
 import { InfluencerPage } from "@/pages/InfluencerPage"
@@ -37,6 +38,10 @@ export default function App() {
           <Route path={ROUTES.home} element={<HomePage />} />
           <Route path={ROUTES.brand} element={<BrandPage />} />
           <Route path={ROUTES.influencer} element={<InfluencerPage />} />
+          <Route
+            path={ROUTES.accountDeletion}
+            element={<AccountDeletionPage />}
+          />
           <Route path="*" element={<Navigate to={ROUTES.home} replace />} />
         </Routes>
       </div>

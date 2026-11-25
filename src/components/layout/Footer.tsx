@@ -1,4 +1,5 @@
-import { PRIVACY_URL, TERMS_URL } from "@/config/links"
+import { Link } from "react-router-dom"
+import { PRIVACY_URL, ROUTES, TERMS_URL } from "@/config/links"
 import { BUSINESS as B } from "@/constants/business"
 import { PLACEHOLDER as P } from "@/constants/placeholders"
 
@@ -35,7 +36,7 @@ export function Footer() {
             {line([
               ["주소", B.address],
               ["대표번호", B.phone],
-              ["문의", P.contactEmail],
+              ["문의", B.email],
             ])}
           </p>
           <p>
@@ -50,6 +51,9 @@ export function Footer() {
           <a href={TERMS_URL} className="text-gray-7 underline">
             이용약관
           </a>
+          <Link to={ROUTES.accountDeletion} className="text-gray-7 underline">
+            계정 삭제
+          </Link>
         </nav>
       </div>
     </footer>
