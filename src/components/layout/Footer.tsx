@@ -28,7 +28,7 @@ export function Footer() {
               ["상호", B.companyName],
               ["대표", B.ceoName],
               ["사업자등록번호", B.businessNumber],
-              ["통신판매업신고", P.mailOrderNumber],
+              ["통신판매업신고", B.mailOrderNumber],
             ])}
           </p>
           <p>

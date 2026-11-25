@@ -3,7 +3,6 @@
 
 export const PLACEHOLDER = {
   // Footer — business information not yet issued (the rest is in business.ts)
-  mailOrderNumber: "[번호]",
   contactEmail: "[이메일]",
   legalNotice: "[법률 검토 후 확정 문구]",
 

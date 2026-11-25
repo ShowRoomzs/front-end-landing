@@ -5,6 +5,8 @@ export const BUSINESS = {
   companyName: "쇼룸즈",
   ceoName: "소병서",
   businessNumber: "791-12-03353",
+  // 통신판매업신고증(용인시 수지구청, 2026.11.25 발급) 번호
+  mailOrderNumber: "제2026-용인수지-3777호",
   phone: "010-3325-6416",
   address:
     "경기도 용인시 수지구 죽전로 152, 글로컬산학협력단 B211-3호(죽전동, 단국대학교)",
