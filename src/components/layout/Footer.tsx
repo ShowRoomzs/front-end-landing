@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { PRIVACY_URL, ROUTES, TERMS_URL } from "@/config/links"
+import { ROUTES } from "@/config/links"
 import { BUSINESS as B } from "@/constants/business"
 import { PLACEHOLDER as P } from "@/constants/placeholders"
 
@@ -45,12 +45,12 @@ export function Footer() {
           </p>
         </div>
         <nav aria-label="약관" className="flex flex-wrap items-start gap-5">
-          <a href={PRIVACY_URL} className="font-bold text-ink underline">
+          <Link to={ROUTES.privacy} className="font-bold text-ink underline">
             개인정보처리방침
-          </a>
-          <a href={TERMS_URL} className="text-gray-7 underline">
+          </Link>
+          <Link to={ROUTES.terms} className="text-gray-7 underline">
             이용약관
-          </a>
+          </Link>
           <Link to={ROUTES.accountDeletion} className="text-gray-7 underline">
             계정 삭제
           </Link>

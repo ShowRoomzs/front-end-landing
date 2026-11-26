@@ -10,6 +10,7 @@ import { AccountDeletionPage } from "@/pages/AccountDeletionPage"
 import { BrandPage } from "@/pages/BrandPage"
 import { HomePage } from "@/pages/HomePage"
 import { InfluencerPage } from "@/pages/InfluencerPage"
+import { TermsPage } from "@/pages/TermsPage"
 import { ROUTES } from "@/config/links"
 
 /** Start each page at the top (or at its #hash target) after navigation. */
@@ -41,6 +42,14 @@ export default function App() {
           <Route
             path={ROUTES.accountDeletion}
             element={<AccountDeletionPage />}
+          />
+          <Route
+            path={ROUTES.privacy}
+            element={<TermsPage type="PRIVACY_POLICY" />}
+          />
+          <Route
+            path={ROUTES.terms}
+            element={<TermsPage type="TERMS_OF_SERVICE" />}
           />
           <Route path="*" element={<Navigate to={ROUTES.home} replace />} />
         </Routes>

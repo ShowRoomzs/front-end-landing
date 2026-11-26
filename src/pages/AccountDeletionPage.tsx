@@ -2,7 +2,8 @@ import type { ReactNode } from "react"
 import { Container } from "@/components/layout/Container"
 import { Footer } from "@/components/layout/Footer"
 import { Header } from "@/components/layout/Header"
-import { WEB_WITHDRAWAL_URL } from "@/config/links"
+import { Link } from "react-router-dom"
+import { ROUTES, WEB_WITHDRAWAL_URL } from "@/config/links"
 import { BUSINESS as B } from "@/constants/business"
 import { PLACEHOLDER as P } from "@/constants/placeholders"
 import { usePageTitle } from "@/hooks/usePageTitle"
@@ -106,6 +107,16 @@ export function AccountDeletionPage() {
               뒤 파기합니다.
             </p>
             {retentionDecided && <p>{P.accountRetention}</p>}
+            <p>
+              보관 항목과 기간은{" "}
+              <Link
+                to={ROUTES.privacy}
+                className="font-bold text-ink underline"
+              >
+                개인정보처리방침
+              </Link>
+              에서 확인할 수 있습니다.
+            </p>
           </Section>
 
           <Section title="탈퇴 전에 확인해 주세요">
